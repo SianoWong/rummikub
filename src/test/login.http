@@ -1,0 +1,36 @@
+### register
+POST http://localhost:9531/api/auth/register
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="username"
+Content-Type: text/plain
+
+siano_wang
+--WebAppBoundary
+Content-Disposition: form-data; name="password"
+Content-Type: text/plain
+
+hui-1231
+--WebAppBoundary
+Content-Disposition: form-data; name="nickname"
+Content-Type: text/plain
+
+siano
+
+### login
+POST http://localhost:9531/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "siano_wang",
+  "password": "hui-1231"
+}
+
+### me
+GET http://localhost:9531/api/auth/me
+X-Auth-Token: 0219c77657404ec0ae4313772ad60000
+
+### logout
+POST http://localhost:9531/api/auth/logout
+X-Auth-Token: 0219c77657404ec0ae4313772ad60000
